@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  backend:
+    container_name: udemy-django-rest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VARIANT: 3.9
+    volumes: 
+      - ..:/workspace:cached
+    restart: unless-stopped
+    command: sleep infinity
+    ports:
+      - 8000:8000

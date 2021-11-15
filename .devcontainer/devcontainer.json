@@ -1,0 +1,44 @@
+{
+	"name": "Udemy Django REST",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "backend",
+	"workspaceFolder": "/workspace",
+
+	"settings": { 
+		"python.pythonPath": "/usr/local/bin/python",
+		"python.languageServer": "Pylance",
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": true,
+		"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+		"python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
+		"python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+		"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
+		"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+		"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
+		
+		"files.associations": {
+			"**/*.html": "html",
+			"**/templates/**/*.html": "django-html",
+			"**/templates/**/*": "django-txt",
+			"**/requirements{/**,*}.{txt,in}": "pip-requirements"
+		},
+
+		"emmet.includeLanguages": {
+			"django-html": "html"
+		},
+
+	},
+
+	"extensions": [
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"batisteo.vscode-django",
+	],
+
+	"forwardPorts": [8000],
+
+	"postCreateCommand": "pip3 install --user -r requirements.txt",
+
+	"remoteUser": "vscode"
+}
